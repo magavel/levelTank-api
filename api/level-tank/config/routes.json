@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/level-tanks",
+      "handler": "level-tank.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/level-tanks/count",
+      "handler": "level-tank.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/level-tanks/:id",
+      "handler": "level-tank.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/level-tanks",
+      "handler": "level-tank.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/level-tanks/:id",
+      "handler": "level-tank.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/level-tanks/:id",
+      "handler": "level-tank.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

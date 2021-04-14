@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "level_tanks",
+  "info": {
+    "name": "levelTank"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "idCapteur": {
+      "type": "integer"
+    },
+    "value": {
+      "type": "float"
+    }
+  }
+}
