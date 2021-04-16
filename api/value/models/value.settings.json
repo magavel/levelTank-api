@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "level_tanks",
+  "collectionName": "values",
   "info": {
-    "name": "levelTank"
+    "name": "Value"
   },
   "options": {
     "increments": true,
@@ -11,7 +11,7 @@
   },
   "attributes": {
     "idCapteur": {
-      "type": "integer"
+      "type": "string"
     },
     "value": {
       "type": "float"

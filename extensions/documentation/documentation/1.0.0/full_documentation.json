@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/14/2021 5:32:59 PM"
+    "x-generation-date": "04/16/2021 5:34:37 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -45,7 +45,7 @@
     }
   ],
   "paths": {
-    "/level-tanks": {
+    "/values/array": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -97,7 +97,63 @@
         },
         "summary": "",
         "tags": [
-          "Level-tank"
+          "Value"
+        ],
+        "parameters": []
+      }
+    },
+    "/values": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Value"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Value"
         ],
         "parameters": [
           {
@@ -247,11 +303,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Value"
                 }
               }
             }
@@ -289,7 +341,7 @@
         },
         "summary": "",
         "tags": [
-          "Level-tank"
+          "Value"
         ],
         "requestBody": {
           "description": "",
@@ -297,14 +349,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewLevel-tank"
+                "$ref": "#/components/schemas/NewValue"
               }
             }
           }
         }
       }
     },
-    "/level-tanks/count": {
+    "/values/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -315,8 +367,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -356,12 +408,12 @@
         },
         "summary": "",
         "tags": [
-          "Level-tank"
+          "Value"
         ],
         "parameters": []
       }
     },
-    "/level-tanks/{id}": {
+    "/values/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -371,11 +423,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Value"
                 }
               }
             }
@@ -413,7 +461,7 @@
         },
         "summary": "",
         "tags": [
-          "Level-tank"
+          "Value"
         ],
         "parameters": [
           {
@@ -437,11 +485,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Value"
                 }
               }
             }
@@ -479,7 +523,7 @@
         },
         "summary": "",
         "tags": [
-          "Level-tank"
+          "Value"
         ],
         "requestBody": {
           "description": "",
@@ -487,7 +531,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewLevel-tank"
+                "$ref": "#/components/schemas/NewValue"
               }
             }
           }
@@ -553,7 +597,7 @@
         },
         "summary": "",
         "tags": [
-          "Level-tank"
+          "Value"
         ],
         "parameters": [
           {
@@ -2798,7 +2842,7 @@
   },
   "components": {
     "schemas": {
-      "Level-tank": {
+      "Value": {
         "required": [
           "id"
         ],
@@ -2807,7 +2851,7 @@
             "type": "string"
           },
           "idCapteur": {
-            "type": "integer"
+            "type": "string"
           },
           "value": {
             "type": "number"
@@ -2818,10 +2862,10 @@
           }
         }
       },
-      "NewLevel-tank": {
+      "NewValue": {
         "properties": {
           "idCapteur": {
-            "type": "integer"
+            "type": "string"
           },
           "value": {
             "type": "number"
@@ -3124,6 +3168,9 @@
     }
   },
   "tags": [
+    {
+      "name": "Value"
+    },
     {
       "name": "Email - Email"
     },
